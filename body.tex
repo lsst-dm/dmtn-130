@@ -1,7 +1,9 @@
 \section{Introduction}
-
+{\bf These are my initial ramblings - for discussion with DMLT for more ideas/structure.}
 Tony Tyson has been contacted by Bill Gates with the idea to have some part of the DM technical stack named
-after Jim Gray. As DM project manager and someone who worked with Jim on SDSS I think this is an excellent idea.  There was mention of some donation for this too but that is really icing - the fact the Gates would lik eot honor Jim Gray in some way through LSST is fitting and good. This document gives some ideas on the topic.
+after Jim Gray.  Gray while at IBM was one of the founders of relational databases, at Microsoft research he gave us
+Skyserver and helped make CasJobs work.
+As DM project manager and someone who worked with Jim on SDSS I think this is an excellent idea.  There was mention of some donation for this too but that is really icing - the fact the Gates would like to honor Jim Gray in some way through LSST is fitting and good. This document gives some ideas on the topic. We need a list of potential candidates for Tony to discuss with Gates.
 
 \section{Things to name}
 
@@ -9,12 +11,36 @@ We could look at our oft maligned product tree in DM for this. Under software we
 \begin{itemize}
 \item Batch Production
 \item Database Back Bone
-\item LSSST Science Platoform
-\item Propmpt Processing
+\item LSST Science Platform
+\item Prompt Processing
 \item Science Pipelines
 \item Quality Control
+\item Supporting - including Qserv, Butler, task, ADQL and imgServ.
 \end{itemize}
 
+Of the above not all are useful - QC, Batch, DBB, are not very visible. ADQL seems small though relevant.
+\subsection{Qserv }
+In terms of appropriateness, Gray being one of the SQL founders, a database would be very appropriate, a relational
+system like Qserv would be the top thing. One worry may be the lifetime of such a product. According to Tony there is no
+indication of a need to be Microsoft1t based. One wonders though if a good path forward for Qserv might indeed be a collaboration with Microsoft to make a Qserv on Sqlserver, something which would make MyDB easier and could actually lead to a long term product like the Jim Gray Petascale DB, or perhaps Grayscale DB.
 
-In terms of appropriatesness, Gray being one of the SQL founders, a database would be very appropriate.
+\subsection{Butler - LSST Database}
+We do not really think of the Data Release as a database but one could consider the data system underlying the science platform as a database and name it. This would give longevity as it will always exist even if the technology changes.
+The front end manifestation of this is the Butler, which contains the relational registry of all image metadata.
+I imagine it might amuse Jim if in our code we had jim\_gray.get(\ldots) and jim\_gray.put(\ldots), some might find it disrespectful.
+ This would require some code change but if there is a large donation it may be doable.
+
+\subsection{Prompt Processing}
+There are two things here which one could potentially name: the alert stream and the prompt products database.
+Both will be long lived in the project. The alert stream is of course one of th highest profile parts of LSST.
+On May imagine most people would still call it the alert stream but it it could be branded and referred to officially as
+the Jim Gray Alert Stream or such.
+
+\subsection{Science Platform}
+ The science platform will definitely be long lived - even if the technology changes the name will stick, So one could consider this an viable option. One may in this case at least want to consider an Azure deployment, they were at least considering supporting K8s (check).
+
+
+\subsection{imgServ}
+The image service could be an option. It will be long lived, given Jim's association with Skyserver and Terraserver this
+would be appropriate. It is an underlying service and may not be very visible though.
 
